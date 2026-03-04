@@ -1,36 +1,21 @@
-# WIN Packet (Winstack) — v0.3.0
+# W.I.N
 
-**Goal:** Make files self-verifying.
+WIN packets make files self-verifying.
 
-## Two commands
+Create proof:
 
-### 1) Create a WIN packet
+winstack win contract.pdf
 
-```bash
-winstack win myfile.pdf
-```
+Verify anywhere:
 
-Outputs a single portable packet:
+winstack verify contract.pdf.win.zip
 
-- `myfile.pdf.win.zip`
+Output:
 
-### 2) Verify a WIN packet (anywhere)
-
-```bash
-winstack verify myfile.pdf.win.zip
-```
-
-Outputs:
-
-- `VERIFIED` or `TAMPERED`
-
-## What a WIN packet contains (implementation detail)
-
-A `.win.zip` includes:
-- the artifact (exact bytes)
-- a proof JSON (WIN-CORE-0.2)
-- `manifest.json` (WIN-PACKET-0.1)
-
-## Invariant
+VERIFIED  
+or  
+TAMPERED
 
 If the bytes change, verification fails.
+
+Repository: https://github.com/Wise-Est-Systems/win
