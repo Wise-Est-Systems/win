@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WIN Proof (WIN-CORE-0.2)",
+  "type": "object",
+  "required": [
+    "spec",
+    "artifact_hash",
+    "algorithm",
+    "artifact_name",
+    "created_at",
+    "bytes"
+  ],
+  "properties": {
+    "spec": {
+      "const": "WIN-CORE-0.2"
+    },
+    "artifact_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]+$"
+    },
+    "algorithm": {
+      "type": "string",
+      "enum": [
+        "sha256",
+        "sha512",
+        "blake3"
+      ]
+    },
+    "artifact_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "media_type": {
+      "type": "string"
+    },
+    "issuer": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
